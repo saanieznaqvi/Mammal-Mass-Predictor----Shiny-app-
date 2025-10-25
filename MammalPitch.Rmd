@@ -1,0 +1,63 @@
+---
+title: "MAMMALPITCH"
+author: "Saanie Zahra Naqvi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Slide 1 — Introduction
+The **Mammal Body Mass Predictor** is an interactive R Shiny app that estimates a mammal’s body weight using **brain weight** and **sleep duration**.  
+It combines biological reasoning with data science principles.
+
+---
+
+## Slide 2 — Dataset and Source
+Data come from the `msleep` dataset in **ggplot2**, originally published by  
+Dr. V. M. Savage et al. in *Nature* (2008).  
+
+It contains physiological traits for ~80 mammal species:
+- Body Weight (kg)
+- Brain Weight (g)
+- Sleep Duration (hours/day)
+- Feeding Type
+
+```{r}
+summary(ggplot2::msleep[, c("bodywt", "brainwt", "sleep_total")])
+```
+
+---
+
+## Slide 3 — Model and Logic
+- User inputs brain weight and sleep duration  
+- The server fits two regression models:
+  - Linear  
+  - Log-transformed (for non-linear scaling)
+- Output: estimated body weight  
+- Visualization: scatter plot + highlighted input point
+
+---
+
+## Slide 4 — App Preview
+Visit the live app:  
+[https://saanienaqvi.shinyapps.io/mammal_mass_predictor/](https://saanienaqvi.shinyapps.io/mammal_mass_predictor/)
+
+```{r echo=FALSE}
+library(ggplot2)
+data(msleep)
+plot(msleep$brainwt, msleep$bodywt, log="xy", col="skyblue", pch=19,
+     xlab="Brain Weight (g)", ylab="Body Weight (kg)",
+     main="Brain vs Body Weight in Mammals")
+```
+
+---
+
+## Slide 5 — Conclusion
+🧠 *Biology meets Data Science*  
+- Demonstrates how physiology and behavior connect  
+- Real dataset, reproducible analysis  
+- Built using **R Shiny** and **ggplot2**  
+- Deployed on **shinyapps.io** and presented on **RPubs**

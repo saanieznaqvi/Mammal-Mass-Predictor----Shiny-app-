@@ -1,0 +1,10 @@
+name: mammal_mass_predictor
+title:
+username: saanienaqvi
+account: saanienaqvi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15866386
+bundleId: 11082643
+url: https://saanienaqvi.shinyapps.io/mammal_mass_predictor/
+version: 1
